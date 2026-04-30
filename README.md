@@ -85,7 +85,7 @@ The generated layers become:
 - Strong composition contract before image generation.
 - Transparent overlay layers.
 - No local DIY background removal.
-- Foreground should add depth, not hide the main subject.
+- Foreground should add depth, not hide the main subject: it should frame the lower/side edges and never cover the face, product body, or central silhouette.
 - Typography, colors, buttons, and motion should match the user's theme.
 - Big title can sit behind the main subject for a 3D editorial effect.
 

@@ -22,6 +22,7 @@ Your job: for the user's theme, create exactly one 2K atlas with 4 zones, crop i
 - Details on layers 2 and 3 must be medium or large with clear edges. Avoid dust, tiny particles, weak glow, or vague bokeh as the main overlay content.
 - All 4 quadrants must belong to one future scene with shared perspective, lighting, scale, camera angle, and color grading.
 - The main object/character must not look suspended, awkwardly cut, or placed unrealistically on top of the foreground.
+- The foreground layer is not the main subject. It must act as a depth frame: bottom edge, lower corners, side elements, table edge, rocks, branches, floor mist, decor, or similar scene-supporting objects. It must not occupy the center, cover the face/torso/product body, or hide more than 10-25% of the main subject. The assembled hero center must stay open for the character or product.
 - If the composition needs a desk, podium, chair, platform, ground, or any contact object, that must be stated explicitly in the prompt as a composition contract.
 - Add a wow-effect title between layers: large typography behind the character but in front of the background, so the main subject overlaps the title and creates depth.
 - Match the UI style of buttons, eyebrow text, and supporting copy to the hero mood. Avoid random neon gradients if the hero is editorial, premium, official, cinematic, or magazine-like.
@@ -58,6 +59,8 @@ Your job: for the user's theme, create exactly one 2K atlas with 4 zones, crop i
    - where the background is
    - where objects stand or sit
    - which layer overlaps which
+   - what the foreground does: depth frame only, lower/side foreground, no center coverage
+   - maximum foreground occlusion: no more than 10-25% of the main subject, never the face, upper body, product body, or key silhouette
    - what hides the lower part of the subject
    - where the subject contacts the environment
 3. Write one prompt for a single 2K atlas using the template.
@@ -78,7 +81,8 @@ Your job: for the user's theme, create exactly one 2K atlas with 4 zones, crop i
    - select and import an appropriate Google Font that matches the theme (e.g., `Playfair Display` for luxury/history, `Montserrat` or `Inter` for modern tech/e-commerce, `Oswald` for sports)
    - use premium UI for buttons and eyebrow text: straight or lightly rounded corners, white/gold/accent colors, restrained ghost buttons, no cheap tech gradients (unless it's a cyberpunk theme)
    - foreground and main object stay sharp
-   - for e-commerce products or full-body subjects, the foreground (`.layer-near`) must be pushed down (e.g. `inset: 25vh -8vw -4vh`) and resized (e.g. `background-size: 100% auto`) so it only frames the bottom edge, rather than completely covering the product
+   - foreground (`.layer-near`) must be pushed down and/or to the sides (e.g. `inset: 34vh -8vw -4vh`, `background-size: 100% auto`, `background-position: center bottom`) so it creates depth instead of taking over the screen
+   - for e-commerce products, portraits, characters, and full-body subjects, `.layer-near` only frames the bottom/side edges and never covers the center, face, product body, or key silhouette
    - real layers use `opacity: 1` unless there is a clear artistic reason
    - avoid `mix-blend-mode` when it makes elements look glassy
    - foreground and main object must move differently
@@ -86,7 +90,8 @@ Your job: for the user's theme, create exactly one 2K atlas with 4 zones, crop i
 12. Confirm:
    - the main subject is not too small
    - details are not accidentally translucent
-   - foreground overlaps the subject logically if required
+   - foreground adds depth but does not cover more than 10-25% of the main subject
+   - face, upper body, product, and key silhouette remain readable
    - no ugly cropped edges appear on scroll
    - layers move in distinct directions
    - there are no obvious browser errors
@@ -123,9 +128,14 @@ No white background, no black background, no solid background, no checkerboard.
 
 BOTTOM LEFT:
 Near transparent PNG foreground overlay.
-Medium and large objects with clear edges.
-[List foreground objects.]
-This layer must sit in front of the main object if composition requires it.
+Depth-framing objects only, with clear edges.
+[List foreground objects that belong at the bottom edge, lower corners, or side edges of the final hero.]
+This layer is NOT the main subject.
+It must create foreground depth without stealing the composition.
+Keep the center area mostly transparent and visually open.
+Objects should occupy mainly the lower 20-35% of the final hero frame, or side edges only.
+It may overlap only the very bottom of the main subject if needed, never the face, torso, product body, or key silhouette.
+Do not create a huge foreground object that fills the quadrant or covers the main subject.
 Real transparent PNG alpha background only.
 No white background, no black background, no solid background, no checkerboard.
 
@@ -163,6 +173,8 @@ Ready for cropping into parallax layers.
 - Do not remove backgrounds with local heuristics.
 - Do not set `opacity < 1` on the main subject without a clear reason.
 - Do not use tiny dust as the main overlay layer.
+- Do not make the foreground a huge object that covers the center, face, torso, product body, or key silhouette.
+- Do not use the foreground as a second main character/product. It is only a depth frame and front-plane accent.
 - Do not leave layers with identical trajectories.
 - Do not publish to the site when the user asked for a local prototype.
 - Do not modify the WordPress project unless the user explicitly asks.
@@ -173,4 +185,5 @@ Ready for cropping into parallax layers.
 - Overlay layers have alpha after Recraft if GPT did not provide transparency
 - Hero opened locally and visually checked
 - Scene is compositionally logical
+- Foreground complements the scene and adds depth, but does not take over the screen or cover the main character/product
 - Parallax feels layered and interesting during scroll and mouse movement
