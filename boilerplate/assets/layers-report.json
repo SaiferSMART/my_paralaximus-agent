@@ -1,0 +1,54 @@
+{
+  "atlas": "C:\\Users\\mrrut\\Desktop\\sloi-hero\\assets\\atlas.png",
+  "atlas_size": [
+    2048,
+    1152
+  ],
+  "layers": {
+    "background": {
+      "file": "C:\\Users\\mrrut\\Desktop\\sloi-hero\\assets\\background.png",
+      "size": [
+        1024,
+        576
+      ],
+      "alpha": 0.0,
+      "border_flatness": 40.25,
+      "action": "cropped_only",
+      "needs_mcp_remove_background": false
+    },
+    "far": {
+      "file": "C:\\Users\\mrrut\\Desktop\\sloi-hero\\assets\\far.png",
+      "size": [
+        1024,
+        576
+      ],
+      "alpha": 0.0,
+      "border_flatness": 22.21,
+      "action": "cropped_only",
+      "needs_mcp_remove_background": true
+    },
+    "near": {
+      "file": "C:\\Users\\mrrut\\Desktop\\sloi-hero\\assets\\near.png",
+      "size": [
+        1024,
+        576
+      ],
+      "alpha": 0.0,
+      "border_flatness": 105.08,
+      "action": "cropped_only",
+      "needs_mcp_remove_background": true
+    },
+    "mug": {
+      "file": "C:\\Users\\mrrut\\Desktop\\sloi-hero\\assets\\mug.png",
+      "size": [
+        1024,
+        576
+      ],
+      "alpha": 0.0,
+      "border_flatness": 83.41,
+      "action": "cropped_only",
+      "needs_mcp_remove_background": true
+    }
+  },
+  "note": "This script only crops the single atlas and checks alpha. It does not remove backgrounds locally."
+}

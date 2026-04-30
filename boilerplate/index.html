@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sloi Hero Parallax Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="parallax-stage" aria-hidden="true">
+        <div class="layer layer-bg" data-depth="0.06" data-scroll="0.12"></div>
+        <div class="layer layer-far" data-depth="0.18" data-scroll="0.32"></div>
+        
+        <div class="layer layer-text" data-depth="0.25" data-scroll="0.45">
+          <h1 class="hero-title-interleaved">НАРУТО<br>УЗУМАКИ</h1>
+        </div>
+
+        <div class="layer layer-near" data-depth="0.34" data-scroll="0.56"></div>
+        <div class="layer layer-mug" data-depth="0.52" data-scroll="0.78"></div>
+        <div class="hero-vignette"></div>
+      </div>
+
+      <div class="hero-copy">
+        <div class="hero-text-backdrop">
+          <p class="eyebrow">Эпичная сага</p>
+          <p class="lead">
+            Путь ниндзя, полный испытаний, дружбы и невероятных сражений. Открой для себя мир шиноби, где мечты становятся реальностью.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#demo">Смотреть аниме</a>
+            <a class="button ghost" href="#layers">Манга</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint">
+        <span></span>
+        Скроль вниз
+      </div>
+    </section>
+
+    <section class="content" id="demo">
+      <div class="content-card">
+        <p class="eyebrow">Как это работает</p>
+        <h2>Слои стоят друг над другом</h2>
+        <p>
+          <code>prepare_layers.py</code> только режет один <code>assets/atlas.png</code>
+          на 4 квадранта и проверяет alpha. Если overlay пришёл с фоном,
+          фон удаляется через MCP Recraft, без локального вырезания.
+        </p>
+      </div>
+      <div class="content-card" id="layers">
+        <p class="eyebrow">Текущий источник</p>
+        <h2>Нарезка из atlas</h2>
+        <p>
+          Исходник: <code>assets/atlas.png</code>. Результат нарезки:
+          <code>background.png</code>, <code>far.png</code>, <code>near.png</code>,
+          <code>mug.png</code> как основной портретный слой. Отчёт проверки лежит в
+          <code>assets/layers-report.json</code>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
