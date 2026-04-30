@@ -6,7 +6,11 @@ It is designed for local prototyping of high-impact hero sections: the agent gen
 
 ## Demo
 
-Demo video:
+Preview:
+
+![PARALAXIMUS demo](media/demo-preview.gif)
+
+Full demo video:
 
 `media/demo.mp4`
 
